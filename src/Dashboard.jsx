@@ -19,7 +19,7 @@ function Dashboard() {
 
     useEffect(() => {
 
-        fetch("http://localhost:8080/api/user/me", {
+        fetch("https://jwtauthapi-4rsw.onrender.com/api/user/me", {
             headers: {
                 Authorization: `Bearer ${token}`
             }

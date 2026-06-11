@@ -50,7 +50,7 @@ function App() {
 
                 <button onClick={() => {
 
-                  fetch('http://localhost:8080/api/auth/login', {
+                  fetch('https://jwtauthapi-4rsw.onrender.com/api/auth/login', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json'

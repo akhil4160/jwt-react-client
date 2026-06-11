@@ -20,7 +20,7 @@ function AdminDashboard() {
 
         const token = localStorage.getItem("token")
 
-        fetch("http://localhost:8080/api/admin/users", {
+        fetch("https://jwtauthapi-4rsw.onrender.com/api/admin/users", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -47,7 +47,7 @@ function AdminDashboard() {
 
         const token = localStorage.getItem("token")
 
-        fetch(`http://localhost:8080/api/admin/users/${id}`, {
+        fetch(`https://jwtauthapi-4rsw.onrender.com/api/admin/users/${id}`, {
 
             method: "DELETE",
 
@@ -73,7 +73,7 @@ function AdminDashboard() {
 
                 : "ADMIN"
 
-        fetch(`http://localhost:8080/api/admin/users/${id}/role`, {
+        fetch(`https://jwtauthapi-4rsw.onrender.com/api/admin/users/${id}/role`, {
 
             method: "PUT",
 
@@ -128,7 +128,7 @@ function AdminDashboard() {
 
         if (!newPassword) return
 
-        fetch(`http://localhost:8080/api/admin/users/${id}/password`, {
+        fetch(`https://jwtauthapi-4rsw.onrender.com/api/admin/users/${id}/password`, {
 
             method: "PUT",
 
@@ -164,7 +164,7 @@ function AdminDashboard() {
 
         const token = localStorage.getItem("token")
 
-        fetch(`http://localhost:8080/api/admin/users/${id}`, {
+        fetch(`https://jwtauthapi-4rsw.onrender.com/api/admin/users/${id}`, {
 
             method: "PUT",
 

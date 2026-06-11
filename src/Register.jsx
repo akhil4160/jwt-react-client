@@ -41,7 +41,7 @@ function Register() {
 
                 <button onClick={() => {
 
-                    fetch('http://localhost:8080/api/auth/register', {
+                    fetch('https://jwtauthapi-4rsw.onrender.com/api/auth/register', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
