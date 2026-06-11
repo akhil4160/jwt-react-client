@@ -16,6 +16,10 @@ A React-based frontend application for a JWT Authentication and User Management 
 - Reset User Passwords
 - Delete Users
 - Responsive UI
+- Role Based Authorization (ADMIN / USER)
+- User Management Portal
+- Filter by Role
+- Delete Users
 
 ## Tech Stack
 
