@@ -37,7 +37,7 @@ A React-based frontend application for a JWT Authentication and User Management 
 
 ### User Dashboard
 
-![Dashboard](jwt-screenshots/users-dashboard.png)
+![Dashboard](./jwt-screenshots/users-dashboard.png)
 
 ### Admin Dashboard
 
