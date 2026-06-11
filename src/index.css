@@ -1,0 +1,382 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.users-table th,
+.users-table td {
+  border: 1px solid #2e3a52;
+}
+
+.users-table th {
+  background-color: #22304a;
+  color: white;
+}
+
+.users-table tr:nth-child(even) {
+  background-color: #1b2438;
+}
+
+.users-table tr:nth-child(odd) {
+  background-color: #162033;
+}
+
+.users-table tr:hover {
+  background-color: #263552;
+  transition: 0.2s;
+}
+
+.users-table {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.table-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #2e3a52;
+}
+
+.admin-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  margin-bottom: 15px;
+}
+
+.sort-select {
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.sort-button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 5px 0;
+}
+
+.stat-card {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 150px;
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.stat-card p {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.role-admin {
+  background-color: #7f1d1d;
+  color: white;
+
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.role-user {
+  background-color: #1e40af;
+  color: white;
+
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.auth-container {
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+
+  flex: 1;
+}
+
+.auth-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: white;
+  box-sizing: border-box;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.auth-card button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-card button:hover {
+  background: #1d4ed8;
+}
+
+.auth-card a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+.auth-card p {
+  margin: 0;
+  color: #22c55e;
+  font-size: 14px;
+}
+
+.dashboard-container {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+}
+
+.profile-card {
+  background: #1e293b;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  width: 400px;
+  max-width: 90%;
+}
+
+.profile-card h2 {
+  margin-bottom: 20px;
+}
+
+.profile-card p {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.admin-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#1b2438;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    margin-bottom:30px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.admin-header button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.admin-header button:hover {
+    background: #1d4ed8;
+}
