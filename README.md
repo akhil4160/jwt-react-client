@@ -29,19 +29,19 @@ A React-based frontend application for a JWT Authentication and User Management 
 
 ### Login Page
 
-![Login](./screenshots/login.png)
+![Login](./jwt-screenshots/login.png)
 
 ### Register Page
 
-![Register](./screenshots/register.png)
+![Register](./jwt-screenshots/register.png)
 
 ### User Dashboard
 
-![Dashboard](./screenshots/user-dashboard.png)
+![Dashboard](jwt-screenshots/users-dashboard.png)
 
 ### Admin Dashboard
 
-![Admin Dashboard](./screenshots/admin-dashboard.png)
+![Admin Dashboard](./jwt-screenshots/admin-dashboard.png)
 
 ## Run Locally
 
