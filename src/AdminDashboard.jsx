@@ -192,7 +192,19 @@ function AdminDashboard() {
 
                 alert(data)
 
-                window.location.reload()
+                setUsers(
+
+                    users.map(user =>
+
+                        user.id === id
+
+                            ? { ...user, name: newName }
+
+                            : user
+
+                    )
+
+                )
 
             })
 
