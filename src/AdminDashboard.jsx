@@ -25,21 +25,37 @@ function AdminDashboard() {
                 Authorization: `Bearer ${token}`
             }
         })
-            .then((response) => response.json())
+            .then(response => {
+
+                if (
+
+                    response.status === 401 ||
+
+                    response.status === 403
+
+                ) {
+
+                    localStorage.removeItem("token")
+
+                    localStorage.removeItem("role")
+
+                    navigate("/")
+
+                    throw new Error("Unauthorized")
+
+                }
+
+                return response.json()
+
+            })
             .then((data) => {
 
-                console.log(data)
-
-                data.forEach(user => {
-                    console.log(
-                        user.id,
-                        user.name,
-                        user.email,
-                        user.role
-                    )
-                })
-
                 setUsers(data)
+
+            })
+            .catch(error => {
+
+                console.error(error)
 
             })
 

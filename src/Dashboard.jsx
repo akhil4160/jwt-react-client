@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom"
 function Dashboard() {
 
     const token = localStorage.getItem("token")
-    console.log("TOKEN =", token)
     const [user, setUser] = useState(null)
     const navigate = useNavigate()
     const logout = () => {
@@ -24,12 +23,37 @@ function Dashboard() {
                 Authorization: `Bearer ${token}`
             }
         })
-            .then((response) => response.json())
+            .then(response => {
+
+                if (
+
+                    response.status === 401 ||
+
+                    response.status === 403
+
+                ) {
+
+                    localStorage.removeItem("token")
+
+                    localStorage.removeItem("role")
+
+                    navigate("/")
+
+                    throw new Error("Unauthorized")
+
+                }
+
+                return response.json()
+
+            })
             .then((data) => {
 
-                console.log(data)
-
                 setUser(data)
+
+            })
+            .catch(error => {
+
+                console.error(error)
 
             })
 
