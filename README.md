@@ -85,7 +85,7 @@ https://jwtauthapi-4rsw.onrender.com
 
 ### User Dashboard
 
-![Dashboard](./jwt-screenshots/user-dasboard.png)
+![Dashboard](./jwt-screenshots/users-dasboard.png)
 
 ### Admin Dashboard
 
