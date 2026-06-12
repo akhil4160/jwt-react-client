@@ -30,6 +30,15 @@ function AdminDashboard() {
 
                 console.log(data)
 
+                data.forEach(user => {
+                    console.log(
+                        user.id,
+                        user.name,
+                        user.email,
+                        user.role
+                    )
+                })
+
                 setUsers(data)
 
             })
@@ -280,17 +289,14 @@ function AdminDashboard() {
                         {users
                             .filter(user =>
 
-                                user.name
+                                (user.name || "")
                                     .toLowerCase()
-
                                     .includes(search.toLowerCase())
 
                                 ||
 
-                                user.email
-
+                                (user.email || "")
                                     .toLowerCase()
-
                                     .includes(search.toLowerCase())
 
                             )
@@ -299,7 +305,7 @@ function AdminDashboard() {
                                 if (sortBy === "name") {
 
                                     const result =
-                                        a.name.localeCompare(b.name)
+                                        (a.name || "").localeCompare(b.name || "")
 
                                     return ascending
                                         ? result
